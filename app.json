@@ -13,17 +13,35 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "食ラボアプリが店舗のロゴや外観写真をアップロードするために写真ライブラリにアクセスします。",
+        "NSCameraUsageDescription": "食ラボアプリが店舗写真を撮影するためにカメラにアクセスします。"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "食ラボアプリが店舗のロゴや外観写真をアップロードするために写真ライブラリにアクセスします。",
+          "cameraPermission": "食ラボアプリが店舗写真を撮影するためにカメラにアクセスします。"
+        }
+      ]
+    ]
   }
 }
